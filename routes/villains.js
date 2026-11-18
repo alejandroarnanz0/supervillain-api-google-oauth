@@ -26,9 +26,7 @@ function loadVillain(req, res, next) {
 router.use('/:villainId/lairs', tokenVerify, loadVillain, lairsRouter);
 
 // GET: listar todos los villanos
-// TODO ALUMNADO: proteger este endpoint con tokenVerify y ejecutar npm run test:exercise.
-// Es la única lectura de negocio que dejamos pública deliberadamente.
-router.get('/', (req, res, next) => {
+router.get('/', tokenVerify, (req, res, next) => {
   Villain.find()
     .then((villains) => res.json({ message: "Sindicato del mal super cargado!!!", data: villains }))
     .catch(next);

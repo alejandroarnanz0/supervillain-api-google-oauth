@@ -1,0 +1,86 @@
+VillainLair - comprobaciones del ejercicio contra http://localhost:3000
+
+### 1. GET /health sin token -> 200
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 15
+ETag: W/"f-VaSQ4oDUiZblZNAEkkN+sX+q3Sg"
+Date: Wed, 18 Nov 2026 17:36:00 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"ok"}
+
+### 2. GET /api/auth/google (inicio OAuth) -> 302 a Google
+HTTP 302 -> https://accounts.google.com/o/oauth2/v2/auth?...
+
+### 3. GET /api/villains sin Authorization -> 401
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+Date: Wed, 18 Nov 2026 17:36:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+### 4. GET /api/villains con 'Bearer incorrecto' -> 401
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+Date: Wed, 18 Nov 2026 17:36:02 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+### 5. GET /api/villains con JWT caducado (firma correcta, exp en el pasado) -> 401
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+Date: Wed, 18 Nov 2026 17:36:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+### 6. GET /api/villains con JWT válido -> 200
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 2192
+ETag: W/"890-E6Xyxol2F64mgo3nIbkjeqX3WAM"
+Date: Wed, 18 Nov 2026 17:36:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Sindicato del mal super cargado!!!","data":[{"_id":"6aeb14f27755170ad5226712","name":"Dr. Nefario","alias":"El Científico Loco","evilLevel":9000,"created":"2026-11-04T11:20:18.022Z","__v":0},{"_id":"6aeb14f27755170ad5226713","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-04T11:20:18.065Z","__v":0},{"_id":"6aeb20e382da1356597f29d4","name":"Voldemor","alias":"El Señor Tenebroso","evilLevel":8000,"created":"2026-11-04T12:11:15.936Z","__v":0},{"_id":"6aeb78cfd64abda3e8c14a79","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-04T18:26:23.737Z","__v":0},{"_id":"6af5f28f8b6483ab7cf101d4","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-12T17:08:31.058Z","__v":0},{"_id":"6af5f2c28b6483ab7cf101d5","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-12T17:09:22.200Z","__v":0},{"_id":"6af5fecb8b6483ab7cf101da","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-12T18:00:43.561Z","__v":0},{"_id":"6af60b7bb9e30d6ab9988e6b","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-12T18:54:51.909Z","__v":0},{"_id":"6afb304c292070f263e16433","name":"Gru","alias":"El Ladron de la Luna","evilLevel":8000,"created":"2026-11-16T16:33:16.397Z","__v":0},{"_id":"6afb3059292070f263e16435","name":"Gru","alias":"El Ladron de la Luna","evilLevel":8000,"created":"2026-11-16T16:33:29.708Z","__v":0},{"_id":"6afb3423d6cec6e4aa105d77","name":"Gru","alias":"El Ladron de la Luna","evilLevel":8000,"created":"2026-11-16T16:49:39.531Z","__v":0},{"_id":"6afbe8cf8e443b69d6afc275","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-17T05:40:31.643Z","__v":0},{"_id":"6afbea0c165895e0388e207d","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-17T05:45:48.136Z","__v":0},{"_id":"6afbead5165895e0388e207e","name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"created":"2026-11-17T05:49:09.309Z","__v":0},{"_id":"6afdd9c837a50557f6cd019b","name":"Gru","alias":"El Ladron de la Luna","evilLevel":8000,"created":"2026-11-18T17:00:56.806Z","__v":0}]}
+
+### 7. GET /api/users/secure con JWT válido -> 200
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 180
+ETag: W/"b4-YTfTnidCqzbQwdzr33B6J0LVgd4"
+Date: Wed, 18 Nov 2026 17:36:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"_id":"6afddf2eb1f9171aa019f6f8","googleSub":"112046862683713524450","creationdate":"2026-11-18T17:23:57.347Z","email":"alarfega@gmail.com","fullname":"Alejandro Arnanz"}}
+
+### 8. GET /api/users/secure sin token -> 401
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+Date: Wed, 18 Nov 2026 17:36:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+

@@ -1,0 +1,41 @@
+
+> supervillain-api-google-oauth@2.0.0 test
+> node --test --test-concurrency=1 --test-timeout=120000 test/*.test.js
+
+✔ POST /api/villains valida y crea (3935.6079ms)
+✔ GET villanos: lista, uno, 404 y 400 (57.4588ms)
+✔ PUT villano (53.5276ms)
+✔ guaridas anidadas bajo un villano (105.1841ms)
+✔ una guarida no se puede usar desde otro villano (25.3309ms)
+✔ esbirros: crear, defaults, modificar y borrar (89.7628ms)
+✔ máquinas: enum de status (48.1159ms)
+✔ borrar un villano elimina en cascada guaridas, esbirros y máquinas (54.4764ms)
+✔ ruta inexistente: 404 en JSON (7.7291ms)
+✔ ya no existe registro ni signin con contraseña (1463.1544ms)
+✔ JWT dura una hora y da acceso al perfil de Google (20.8195ms)
+✔ rechaza ausencia de cabecera, esquema incorrecto y tokens manipulados o caducados (104.2779ms)
+✔ todas las operaciones de negocio salvo GET del listado exigen JWT antes de consultar MongoDB (113.7885ms)
+✔ health es público y el listado funciona con token antes y después del ejercicio (18.4174ms)
+✔ JSON mal formado y errores no filtran los datos enviados (10.5202ms)
+✔ rechaza JWT de la versión antigua y de otra audiencia (19.2373ms)
+✔ producción exige credenciales y callback HTTPS fijo (1295.5292ms)
+✔ desarrollo permite HTTP únicamente en loopback y sin cookie Secure (142.1331ms)
+✔ solicita código, scopes mínimos, nonce y PKCE S256; nunca acceso offline (15.304ms)
+✔ protocolo real: valida ID token firmado con JWKS y devuelve solo el perfil (83.2604ms)
+✔ protocolo real: rechaza firma falsa, issuer, audience, nonce y expiración incorrectos (35.0179ms)
+✔ inicio genera cookie HttpOnly SameSite, datos efímeros y state distinto (1489.5487ms)
+✔ callback válido crea perfil sin contraseña y JWT de API; no devuelve tokens de Google (83.9721ms)
+✔ volver a entrar actualiza la misma cuenta por sub, nunca vincula por email (68.278ms)
+✔ rechaza callbacks sin cookie, state ausente, state repetido en query u otro navegador (69.6303ms)
+✔ el callback solo se consume una vez incluso reenviando la cookie original (42.8966ms)
+✔ estado caducado es rechazado aunque MongoDB no haya ejecutado el borrado TTL (30.2311ms)
+✔ denegación de consentimiento y fallo de validación no crean usuario ni token (52.5758ms)
+✔ limita los intentos de acceso OAuth (617.6925ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29380.2051

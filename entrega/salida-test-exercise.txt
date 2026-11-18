@@ -1,0 +1,16 @@
+
+> supervillain-api-google-oauth@2.0.0 test:exercise
+> node --test --test-timeout=120000 exercises/*.test.js
+
+✔ el listado rechaza peticiones sin token (1845.1662ms)
+✔ el listado rechaza un token inválido (17.4545ms)
+✔ el listado rechaza un token caducado (30.7315ms)
+✔ un token válido permite listar; health y acceso con Google siguen disponibles (92.1673ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9059.3263
