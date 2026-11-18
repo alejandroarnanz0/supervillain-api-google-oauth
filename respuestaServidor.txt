@@ -1,0 +1,146 @@
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:53:45 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"b4-YTfTnidCqzbQwdzr33B6J0LVgd4"
+rndr-id: e236a308-fd30-48a5
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+CF-RAY: a5c92e077accdd98-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"data":{"_id":"6afddf2eb1f9171aa019f6f8","googleSub":"112046862683713524450","creationdate":"2026-11-18T17:23:57.347Z","email":"alarfega@gmail.com","fullname":"Alejandro Arnanz"}}
+
+HTTP/1.1 201 Created
+Date: Wed, 18 Nov 2026 18:53:45 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"ce-7TrXiptBaplBBsXObOh9v9jq/Bo"
+rndr-id: 370f59b0-4a51-476f
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e099d82f779-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"message":"Nuevo villano registrado. El mundo tiembla.","data":{"name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"_id":"6afdf439a8a65c2a981de0ad","created":"2026-11-18T18:53:45.881Z","__v":0}}
+
+HTTP/1.1 401 Unauthorized
+Date: Wed, 18 Nov 2026 18:53:46 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+rndr-id: 15f13519-6373-401d
+Server: cloudflare
+vary: Accept-Encoding
+www-authenticate: Bearer
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e0b3e8b0cdb-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:53:46 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"1e0-1WKDj0UH8Ndr5qAOE7ehF4yiZu4"
+rndr-id: ab2a1058-62de-4052
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e0d19fb0311-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"message":"Arsenal del imperio","total":2,"data":[{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0},{"_id":"6afb3424d6cec6e4aa105d79","lair":{"_id":"6afb3424d6cec6e4aa105d78","name":"Guarida para dispositivos","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}]}
+
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:53:46 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"1e0-1WKDj0UH8Ndr5qAOE7ehF4yiZu4"
+rndr-id: 7b6aa7ae-2d25-4258
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+CF-RAY: a5c92e0f0f011171-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"message":"Arsenal del imperio","total":2,"data":[{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0},{"_id":"6afb3424d6cec6e4aa105d79","lair":{"_id":"6afb3424d6cec6e4aa105d78","name":"Guarida para dispositivos","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}]}
+
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:53:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"d2-FFwHTMF+OS/u7xBskPtxbsPLzTE"
+rndr-id: d87e41dc-49ca-4e02
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e135afb1527-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}
+
+HTTP/1.1 401 Unauthorized
+Date: Wed, 18 Nov 2026 18:53:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+rndr-id: 17423db0-e600-4043
+Server: cloudflare
+vary: Accept-Encoding
+www-authenticate: Bearer
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e157d81f77b-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+HTTP/1.1 401 Unauthorized
+Date: Wed, 18 Nov 2026 18:53:48 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+rndr-id: 1d4691ce-de38-4db2
+Server: cloudflare
+vary: Accept-Encoding
+www-authenticate: Bearer
+x-render-origin-server: Render
+CF-RAY: a5c92e1779b0f778-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+HTTP/1.1 400 Bad Request
+Date: Wed, 18 Nov 2026 18:53:48 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"2d-zyyidRYlwPos5Zw5DQgjbmBW7Q4"
+rndr-id: 6aed8c2b-5ef1-497a
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c92e194d12cfeb-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"error":"Datos o identificador no válidos"}

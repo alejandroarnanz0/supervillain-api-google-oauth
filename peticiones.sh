@@ -6,7 +6,7 @@ echo; echo
 
 curl -sS -i -X POST "$BASE/api/villains" \
   -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
-  -d '{"name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000}'
+  -d '{"name":"Gru","alias":"El Ladr\u00f3n de la Luna","evilLevel":8000}'
 # 201; la misma petición sin Authorization devuelve 401
 echo; echo
 
@@ -26,8 +26,8 @@ curl -sS -i "$BASE/api/arsenal" -H "Authorization: Bearer $TOKEN"
 # 200: listado del arsenal
 echo; echo
 
-curl -sS -i "$BASE/api/arsenal?status=Lista" -H "Authorization: Bearer $TOKEN"
-# 200: solo las máquinas listas
+curl -sS -i "$BASE/api/arsenal?status=Cargando" -H "Authorization: Bearer $TOKEN"
+# 200: solo las máquinas cargando
 echo; echo
 
 DEVICE_ID=$(curl -sS "$BASE/api/arsenal" -H "Authorization: Bearer $TOKEN" | grep -o '"_id":"[a-f0-9]\{24\}"' | head -1 | cut -d'"' -f4)
