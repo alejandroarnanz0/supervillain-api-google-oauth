@@ -1,146 +1,164 @@
+==========================================================
+ VillainLair API (OAuth 2.0 con Google + JWT) - https://supervillain-api-google-oauth-efdj.onrender.com
+==========================================================
+
+### 1. GET /api/users/secure CON token -> 200 (perfil del usuario autenticado)
 HTTP/1.1 200 OK
-Date: Wed, 18 Nov 2026 18:53:45 GMT
+Date: Wed, 18 Nov 2026 18:56:41 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 cf-cache-status: DYNAMIC
 etag: W/"b4-YTfTnidCqzbQwdzr33B6J0LVgd4"
-rndr-id: e236a308-fd30-48a5
+rndr-id: 5ed68fa0-48e1-4e5e
 Server: cloudflare
 vary: Accept-Encoding
 x-render-origin-server: Render
-CF-RAY: a5c92e077accdd98-MAD
+CF-RAY: a5c932506e11fcbf-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"data":{"_id":"6afddf2eb1f9171aa019f6f8","googleSub":"112046862683713524450","creationdate":"2026-11-18T17:23:57.347Z","email":"alarfega@gmail.com","fullname":"Alejandro Arnanz"}}
 
+### 2. POST /api/villains CON token -> 201 (crear villano)
 HTTP/1.1 201 Created
-Date: Wed, 18 Nov 2026 18:53:45 GMT
+Date: Wed, 18 Nov 2026 18:56:41 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
-etag: W/"ce-7TrXiptBaplBBsXObOh9v9jq/Bo"
-rndr-id: 370f59b0-4a51-476f
+cf-cache-status: DYNAMIC
+etag: W/"ce-KhSueAksDIxqtX/SZ9Rxgvc5+f0"
+rndr-id: f506f550-8f53-409b
 Server: cloudflare
 vary: Accept-Encoding
 x-render-origin-server: Render
-cf-cache-status: DYNAMIC
-CF-RAY: a5c92e099d82f779-MAD
+CF-RAY: a5c932535f972951-MAD
 alt-svc: h3=":443"; ma=86400
 
-{"message":"Nuevo villano registrado. El mundo tiembla.","data":{"name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"_id":"6afdf439a8a65c2a981de0ad","created":"2026-11-18T18:53:45.881Z","__v":0}}
+{"message":"Nuevo villano registrado. El mundo tiembla.","data":{"name":"Gru","alias":"El Ladrón de la Luna","evilLevel":8000,"_id":"6afdf4e9dfaccee22baee6a8","created":"2026-11-18T18:56:41.547Z","__v":0}}
 
+### 3. GET /api/villains SIN token -> 401 (antes era la excepción docente con 200; ya protegido con tokenVerify)
 HTTP/1.1 401 Unauthorized
-Date: Wed, 18 Nov 2026 18:53:46 GMT
+Date: Wed, 18 Nov 2026 18:56:42 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
+cf-cache-status: DYNAMIC
 etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
-rndr-id: 15f13519-6373-401d
+rndr-id: 4ad44d1b-25ad-47d3
 Server: cloudflare
 vary: Accept-Encoding
 www-authenticate: Bearer
 x-render-origin-server: Render
-cf-cache-status: DYNAMIC
-CF-RAY: a5c92e0b3e8b0cdb-MAD
+CF-RAY: a5c932569db4fe7e-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"ok":false,"message":"Token ausente, inválido o caducado"}
 
-HTTP/1.1 200 OK
-Date: Wed, 18 Nov 2026 18:53:46 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-etag: W/"1e0-1WKDj0UH8Ndr5qAOE7ehF4yiZu4"
-rndr-id: ab2a1058-62de-4052
-Server: cloudflare
-vary: Accept-Encoding
-x-render-origin-server: Render
-cf-cache-status: DYNAMIC
-CF-RAY: a5c92e0d19fb0311-MAD
-alt-svc: h3=":443"; ma=86400
+==========================================================
+ ENDPOINT SECURIZADO ADICIONAL: recurso /api/arsenal
+ (todas las máquinas del juicio final; exige JWT)
+==========================================================
 
-{"message":"Arsenal del imperio","total":2,"data":[{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0},{"_id":"6afb3424d6cec6e4aa105d79","lair":{"_id":"6afb3424d6cec6e4aa105d78","name":"Guarida para dispositivos","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}]}
-
+### 4. GET /api/arsenal CON token -> 200 (listado completo)
 HTTP/1.1 200 OK
-Date: Wed, 18 Nov 2026 18:53:46 GMT
+Date: Wed, 18 Nov 2026 18:56:42 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 cf-cache-status: DYNAMIC
 etag: W/"1e0-1WKDj0UH8Ndr5qAOE7ehF4yiZu4"
-rndr-id: 7b6aa7ae-2d25-4258
+rndr-id: 6a801c47-4722-474c
 Server: cloudflare
 vary: Accept-Encoding
 x-render-origin-server: Render
-CF-RAY: a5c92e0f0f011171-MAD
+CF-RAY: a5c932590b7ffbf1-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"message":"Arsenal del imperio","total":2,"data":[{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0},{"_id":"6afb3424d6cec6e4aa105d79","lair":{"_id":"6afb3424d6cec6e4aa105d78","name":"Guarida para dispositivos","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}]}
 
+### 5. GET /api/arsenal?status=Cargando CON token -> 200 (filtro por estado)
 HTTP/1.1 200 OK
-Date: Wed, 18 Nov 2026 18:53:47 GMT
+Date: Wed, 18 Nov 2026 18:56:42 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"1e0-1WKDj0UH8Ndr5qAOE7ehF4yiZu4"
+rndr-id: 02a7a18c-ab04-4f84
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+CF-RAY: a5c9325bba43c8fe-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"message":"Arsenal del imperio","total":2,"data":[{"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0},{"_id":"6afb3424d6cec6e4aa105d79","lair":{"_id":"6afb3424d6cec6e4aa105d78","name":"Guarida para dispositivos","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}]}
+
+### 6. GET /api/arsenal/6aeb14f27755170ad5226717 CON token -> 200 (una máquina concreta)
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:56:43 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
 etag: W/"d2-FFwHTMF+OS/u7xBskPtxbsPLzTE"
-rndr-id: d87e41dc-49ca-4e02
+rndr-id: d66ff7f8-d08b-403e
 Server: cloudflare
 vary: Accept-Encoding
 x-render-origin-server: Render
-cf-cache-status: DYNAMIC
-CF-RAY: a5c92e135afb1527-MAD
+CF-RAY: a5c932624824a191-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"_id":"6aeb14f27755170ad5226717","lair":{"_id":"6aeb14f27755170ad5226714","name":"Volcán Inactivo #4","location":"Isla de Pascua"},"name":"Rayo Encogedor","status":"Cargando","power":"1.21 Gigawatts","__v":0}
 
+### 7. GET /api/arsenal SIN token -> 401
 HTTP/1.1 401 Unauthorized
-Date: Wed, 18 Nov 2026 18:53:47 GMT
+Date: Wed, 18 Nov 2026 18:56:44 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
-rndr-id: 17423db0-e600-4043
+rndr-id: f112cfff-f0e6-4257
 Server: cloudflare
 vary: Accept-Encoding
 www-authenticate: Bearer
 x-render-origin-server: Render
 cf-cache-status: DYNAMIC
-CF-RAY: a5c92e157d81f77b-MAD
+CF-RAY: a5c932649ba9f77b-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"ok":false,"message":"Token ausente, inválido o caducado"}
 
+### 8. GET /api/arsenal con token INVÁLIDO -> 401
 HTTP/1.1 401 Unauthorized
-Date: Wed, 18 Nov 2026 18:53:48 GMT
+Date: Wed, 18 Nov 2026 18:56:44 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 cf-cache-status: DYNAMIC
 etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
-rndr-id: 1d4691ce-de38-4db2
+rndr-id: c5bdd3d4-b61e-423f
 Server: cloudflare
 vary: Accept-Encoding
 www-authenticate: Bearer
 x-render-origin-server: Render
-CF-RAY: a5c92e1779b0f778-MAD
+CF-RAY: a5c93266ea16244c-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"ok":false,"message":"Token ausente, inválido o caducado"}
 
+### 9. GET /api/arsenal/no-es-un-id CON token -> 400 (id mal formado)
 HTTP/1.1 400 Bad Request
-Date: Wed, 18 Nov 2026 18:53:48 GMT
+Date: Wed, 18 Nov 2026 18:56:45 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
+cf-cache-status: DYNAMIC
 etag: W/"2d-zyyidRYlwPos5Zw5DQgjbmBW7Q4"
-rndr-id: 6aed8c2b-5ef1-497a
+rndr-id: 2564d498-ade2-4896
 Server: cloudflare
 vary: Accept-Encoding
 x-render-origin-server: Render
-cf-cache-status: DYNAMIC
-CF-RAY: a5c92e194d12cfeb-MAD
+CF-RAY: a5c9326958e7e8d2-MAD
 alt-svc: h3=":443"; ma=86400
 
 {"error":"Datos o identificador no válidos"}
