@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const villainsRouter = require('./routes/villains');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const arsenalRouter = require('./routes/arsenal');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/villains', villainsRouter);
+app.use('/api/arsenal', arsenalRouter);
 
 // Catch 404
 app.use(function (req, res, next) {
