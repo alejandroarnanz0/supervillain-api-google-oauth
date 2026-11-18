@@ -4,7 +4,8 @@
 BASE=${BASE:-http://localhost:3000}
 TOKEN=${TOKEN:-}
 
-req() { echo "### $1"; shift; curl -sS -i "$@"; echo; echo; }
+# el email del usuario se tapa en la salida
+req() { echo "### $1"; shift; curl -sS -i "$@" | sed -E 's/"email":"[^"]*"/"email":"***"/'; echo; echo; }
 
 echo "VillainLair - comprobaciones contra $BASE"
 echo

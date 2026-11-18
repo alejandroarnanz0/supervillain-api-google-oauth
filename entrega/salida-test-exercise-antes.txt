@@ -1,0 +1,78 @@
+
+> supervillain-api-google-oauth@2.0.0 test:exercise
+> node --test --test-timeout=120000 exercises/*.test.js
+
+✖ el listado rechaza peticiones sin token (2988.3197ms)
+✖ el listado rechaza un token inválido (29.8431ms)
+✖ el listado rechaza un token caducado (34.0024ms)
+✔ un token válido permite listar; health y acceso con Google siguen disponibles (114.3549ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30567.6063
+
+✖ failing tests:
+
+test at exercises\listado.test.js:10:1
+✖ el listado rechaza peticiones sin token (2988.3197ms)
+  Error: expected 401 "Unauthorized", got 200 "OK"
+      at TestContext.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\exercises\listado.test.js:11:43)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+  ----
+      at Test._assertStatus (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:404:14)
+      at c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:227:13)
+      at Object.onceWrapper (node:events:630:28)
+      at Server.emit (node:events:509:28)
+      at emitCloseNT (node:net:2487:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at exercises\listado.test.js:13:1
+✖ el listado rechaza un token inválido (29.8431ms)
+  Error: expected 401 "Unauthorized", got 200 "OK"
+      at TestContext.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\exercises\listado.test.js:14:85)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ----
+      at Test._assertStatus (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:404:14)
+      at c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:227:13)
+      at Object.onceWrapper (node:events:630:28)
+      at Server.emit (node:events:509:28)
+      at emitCloseNT (node:net:2487:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at exercises\listado.test.js:16:1
+✖ el listado rechaza un token caducado (34.0024ms)
+  Error: expected 401 "Unauthorized", got 200 "OK"
+      at TestContext.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\exercises\listado.test.js:18:85)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ----
+      at Test._assertStatus (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:404:14)
+      at c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (c:\Users\alarf\Desktop\git\supervillain-api-google-oauth\node_modules\supertest\lib\test.js:227:13)
+      at Object.onceWrapper (node:events:630:28)
+      at Server.emit (node:events:509:28)
+      at emitCloseNT (node:net:2487:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
