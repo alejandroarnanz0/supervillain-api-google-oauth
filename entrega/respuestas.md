@@ -25,4 +25,5 @@ Al pasar la hora la API devuelve 401 y hay que volver a hacer login con Google. 
 - `salida-npm-test.txt` y `salida-test-exercise.txt`: salida de los tests (29/29 y 4/4).
 - `callback-local.png`: respuesta del callback (token tapado).
 - `comprobaciones-local.txt`: peticiones con curl. El token caducado lo genero firmándolo con el mismo secreto pero con la fecha de expiración ya pasada.
-- URL de Render: PENDIENTE
+- URL de Render: https://supervillain-api-google-oauth-efdj.onrender.com
+- `comprobaciones-render.txt`: las mismas peticiones contra Render. Solo están las que no necesitan token, porque Chrome bloquea el dominio de Render como "sitio peligroso" al ir al login de Google (`render-chrome-aviso.png`), así que no pude sacar un token allí. En local sí está todo probado con token.

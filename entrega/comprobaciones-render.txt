@@ -1,0 +1,59 @@
+VillainLair - comprobaciones contra https://supervillain-api-google-oauth-efdj.onrender.com
+
+### 1. GET /health sin token -> 200
+HTTP/1.1 200 OK
+Date: Wed, 18 Nov 2026 18:02:44 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+etag: W/"f-VaSQ4oDUiZblZNAEkkN+sX+q3Sg"
+rndr-id: 3e680f1b-cae2-40fe
+Server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a5c8e34e18bf0312-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"status":"ok"}
+
+### 2. GET /api/auth/google -> 302 a Google
+HTTP 302 -> https://accounts.google.com/o/oauth2/v2/auth?...
+
+### 3. GET /api/villains sin token -> 401
+HTTP/1.1 401 Unauthorized
+Date: Wed, 18 Nov 2026 18:02:46 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+rndr-id: a60dba4a-1f7e-4ef9
+Server: cloudflare
+vary: Accept-Encoding
+www-authenticate: Bearer
+x-render-origin-server: Render
+CF-RAY: a5c8e355fb703b92-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+### 4. GET /api/villains con 'Bearer incorrecto' -> 401
+HTTP/1.1 401 Unauthorized
+Date: Wed, 18 Nov 2026 18:02:46 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+cf-cache-status: DYNAMIC
+etag: W/"3c-W+nvKPRoQLpHL2kCjxO1KELBsjc"
+rndr-id: da43a663-9d85-40bc
+Server: cloudflare
+vary: Accept-Encoding
+www-authenticate: Bearer
+x-render-origin-server: Render
+CF-RAY: a5c8e358effacc44-MAD
+alt-svc: h3=":443"; ma=86400
+
+{"ok":false,"message":"Token ausente, inválido o caducado"}
+
+### (5-8 omitidas: falta TOKEN)
